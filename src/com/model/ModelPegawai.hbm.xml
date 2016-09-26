@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping>
+   <class name="com.model.ModelPegawai" table="tb_pegawai">
+      <meta attribute="class-description">
+         ambil dari tabel pegawai 
+      </meta>
+      <id name="idpegawai" type="int" column="idpegawai">
+         <generator class="native"/>
+      </id>
+      <property name="nama" column="nama" type="string"/>
+      <property name="jenis_kelamin" column="jenis_kelamin" type="string"/>
+      <property name="alamat" column="alamat" type="string"/>
+   </class>
+</hibernate-mapping>
