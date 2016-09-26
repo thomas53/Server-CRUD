@@ -4,55 +4,67 @@ import java.io.Serializable;
 
 public class ModelPegawai implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int idPegawai;
-	private String Nama;
-	private String Alamat;
-	private String Jenkel;
+	private int idpegawai;
+	private String nama;
+	private String alamat;
+	private String jenis_kelamin;
 	
 	public ModelPegawai(){
 		
 	}
 	
-	public ModelPegawai(String nama, String jenkel,  String alamat) {
-		super();
-		Nama = nama;
-		Alamat = alamat;
-		Jenkel = jenkel;
+	
+
+	public ModelPegawai(int idpegawai, String nama, String alamat, String jenis_kelamin) {
+		this.idpegawai = idpegawai;
+		this.nama = nama;
+		this.alamat = alamat;
+		this.jenis_kelamin = jenis_kelamin;
 	}
 
-	public ModelPegawai(int idPegawai, String nama, String jenkel, String alamat ) {
-		super();
-		this.idPegawai = idPegawai;
-		Nama = nama;
-		Alamat = alamat;
-		Jenkel = jenkel;
+
+
+	public ModelPegawai( String nama, String alamat, String jenis_kelamin) {
+		this.nama = nama;
+		this.alamat = alamat;
+		this.jenis_kelamin = jenis_kelamin;
 	}
-	
-	public int getIdPegawai() {
-		return idPegawai;
+
+	public int getIdpegawai() {
+		return idpegawai;
 	}
-	
-	public void setIdPegawai(int idPegawai) {
-		this.idPegawai = idPegawai;
+
+	public void setIdpegawai(int idpegawai) {
+		this.idpegawai = idpegawai;
 	}
+
 	public String getNama() {
-		return Nama;
+		return nama;
 	}
+
 	public void setNama(String nama) {
-		Nama = nama;
+		this.nama = nama;
 	}
+
 	public String getAlamat() {
-		return Alamat;
+		return alamat;
 	}
+
 	public void setAlamat(String alamat) {
-		Alamat = alamat;
+		this.alamat = alamat;
 	}
-	public String getJenkel() {
-		return Jenkel;
+
+	public String getJenis_kelamin() {
+		return jenis_kelamin;
 	}
-	public void setJenkel(String jenkel) {
-		Jenkel = jenkel;
+
+	public void setJenis_kelamin(String jenis_kelamin) {
+		this.jenis_kelamin = jenis_kelamin;
 	}
+	
+	
+
+	
 	
 	
 }

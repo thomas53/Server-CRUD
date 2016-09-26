@@ -8,7 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 
-import com.dao.DaoPegawai;
+import com.dao.ManagePegawai;
 import com.model.ModelPegawai;
 
 public class Pegawai extends Thread{
@@ -36,19 +36,19 @@ public class Pegawai extends Thread{
 					ObjectInputStream in = new ObjectInputStream(server.getInputStream());
 					pegawai = (ModelPegawai) in.readObject();
 				}
-				DaoPegawai daoPegawai = new DaoPegawai();
+				ManagePegawai managePegawai = new ManagePegawai();
 				// pilih aksi
 				ObjectOutputStream out = new ObjectOutputStream(server.getOutputStream());
 				if(act.equals("ins")){
-					out.writeObject(daoPegawai.insertPegawai(pegawai));
+					out.writeObject(managePegawai.tambahPegawai(pegawai));
 				}else if(act.equals("upd")){
-					out.writeObject(daoPegawai.updatePegawai(pegawai));
+					out.writeObject(managePegawai.editPegawai(pegawai));
 				}else if(act.equals("del")){
-					out.writeObject(daoPegawai.deletePegawai(pegawai.getIdPegawai()));
+					out.writeObject(managePegawai.hapusData(pegawai.getIdpegawai()));
 				}else if(act.equals("get")){
-					out.writeObject(daoPegawai.ambilPegawai());
+					out.writeObject(managePegawai.ambilDaftarPegawai());
 				}else if(act.equals("getId")){
-					out.writeObject(daoPegawai.ambilPegawayById(pegawai.getIdPegawai()));
+					out.writeObject(managePegawai.ambilDataPegawai(pegawai.getIdpegawai()));
 				}
 				
 				
